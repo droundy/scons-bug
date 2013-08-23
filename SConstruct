@@ -13,7 +13,7 @@ for i in range(Ntests):
             source = 'hello-%04d.c' % i)
     Command(target = 'hello-%04d' % i,
             source = 'hello-%04d-small' % i,
-            action = 'cp $SOURCE $TARGET && head -c 10000000 /dev/zero >> $TARGET')
+            action = 'cp $SOURCE $TARGET && head -c 100000000 /dev/zero >> $TARGET')
 for i in range(Ntests):
     NoCache(Command(target = 'greeting-%04d.txt' % i,
                     source = 'hello-%04d' % i,
